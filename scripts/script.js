@@ -383,7 +383,7 @@ function addToCart() {
             let num1 = costNum1.match(/\d+\.\d+/g);
             totalCost -= num1[0];
             totalCostBlock.textContent = 'Total Cost: $' + totalCost.toFixed(2);
-            amount3.style.color = 'rgb(0, 255, 8)';
+            amount4.style.color = 'rgb(0, 255, 8)';
         }
 
         cartTable.removeChild(cartProduct);
