@@ -69,6 +69,12 @@ let books = [
         name: 'Portraint of Dorian Gray',
         price: 22.00,
         amount: 40
+    },
+    {
+        id: 4,
+        name: 'Harry Potter',
+        price: 15.80,
+        amount: 100
     }
 ]
 
@@ -267,6 +273,13 @@ function addToCart() {
                 amountInStock.style.color = 'white';
             }
         }
+        if (dropdown.value == 4) {
+            books[4].amount -= productNumber.value;
+            amountInStock.textContent = books[4].amount + ' pcs in stock';
+            if (amountInStock.textContent == "0 pcs in stock") {
+                amountInStock.style.color = 'white';
+            }
+        }
 
         totalCost += +productNumber.value * product.price;
         cartProduct.classList.add('cart-product');
@@ -305,6 +318,8 @@ function addToCart() {
         const amount2 = productAmount2.querySelector('.product-amount');
         const productAmount3 = document.getElementById('bookID-3');
         const amount3 = productAmount3.querySelector('.product-amount');
+        const productAmount4 = document.getElementById('bookID-4');
+        const amount4 = productAmount4.querySelector('.product-amount');
 
         if (cartProductName.textContent == books[0].name) {
             let costNum0 = cartProductNumber.textContent;
@@ -347,6 +362,18 @@ function addToCart() {
             let num0 = costNum0.match(/\d+/g);
             books[3].amount += +num0[0];
             amount3.textContent = books[3].amount + ' pcs in stock';
+            let costNum1 = cartProductCost.textContent;
+            let num1 = costNum1.match(/\d+\.\d+/g);
+            totalCost -= num1[0];
+            totalCostBlock.textContent = 'Total Cost: $' + totalCost.toFixed(2);
+            amount3.style.color = 'rgb(0, 255, 8)';
+        }
+        
+        if (cartProductName.textContent == books[4].name) {
+            let costNum0 = cartProductNumber.textContent;
+            let num0 = costNum0.match(/\d+/g);
+            books[4].amount += +num0[0];
+            amount4.textContent = books[4].amount + ' pcs in stock';
             let costNum1 = cartProductCost.textContent;
             let num1 = costNum1.match(/\d+\.\d+/g);
             totalCost -= num1[0];
