@@ -187,6 +187,8 @@ const productAmount2 = document.getElementById('bookID-2');
 const amount2 = productAmount2.querySelector('.product-amount');
 const productAmount3 = document.getElementById('bookID-3');
 const amount3 = productAmount3.querySelector('.product-amount');
+const productAmount4 = document.getElementById('bookID-3');
+const amount4 = productAmount4.querySelector('.product-amount');
 
 productAmount0.addEventListener('click', () => {
     dropdown.value = 0;
@@ -201,6 +203,9 @@ productAmount2.addEventListener('click', () => {
 });
 productAmount3.addEventListener('click', () => {
     dropdown.value = 3;
+});
+productAmount4.addEventListener('click', () => {
+    dropdown.value = 4;
 });
 
 function addToCart() {
